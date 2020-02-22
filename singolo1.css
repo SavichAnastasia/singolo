@@ -97,3 +97,37 @@ header nav a {
     font-size: 12px;
     margin-left: 26px;
 }
+
+header nav a:hover {
+    color: #f06c64;
+}
+
+/*slider*/
+
+section.slider {
+    background-color: #f06c64;
+}
+
+section.slider .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 53px 42px 58px;
+}
+
+section.slider .container .slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section.slider .container .slide .slide-image {
+    margin: 0 36px;
+}
+
+section.slider:after {
+    content: "";
+    height: 6px;
+    background-color: #ea676b;
+    display: block;
+}
