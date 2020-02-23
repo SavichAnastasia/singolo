@@ -2,7 +2,7 @@
     font-family: 'Lato-Regular';
     src: url('assets/fonts/Lato/Lato-Regular.woff') format('woff'),
          url('assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -10,7 +10,7 @@
     font-family: 'Lato-Bold';
     src: url('assets/fonts/Lato/Lato-Bold.woff') format('woff'),
          url('assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
-    font-weight: 700;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -18,7 +18,7 @@
     font-family: 'Lato-Light';
     src: url('assets/fonts/Lato/Lato-Light.woff') format('woff'),
          url('assets/fonts/Lato/Lato-Light.ttf') format('truetype');
-    font-weight: 300;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -26,7 +26,7 @@
     font-family: 'Lato-Black';
     src: url('assets/fonts/Lato/Lato-Black.woff') format('woff'),
          url('assets/fonts/Lato/Lato-Black.ttf') format('truetype');
-    font-weight: 900;
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -40,17 +40,24 @@ html {
 	padding: 0;
 	list-style: none;
     box-sizing: border-box;
+    font-weight: normal;
 }
 
 .container {
 	max-width: 1020px;
 	width: 100%;
-	padding: 0 15px;
+	padding: 0 40px;
     margin: 0 auto;
 }
 
 a {
 	text-decoration: none;
+}
+
+header:after, section:after {
+    content: "";
+    height: 6px;
+    display: block;
 }
 
 /*header*/
@@ -62,16 +69,14 @@ header {
 
 header .container {
     display: flex;
-    padding: 29px 40px;
+    padding-top: 29px;
+    padding-bottom: 29px;
     justify-content: space-between;
     align-items: center;
 }
 
 header:after {
-    content: "";
-    height: 6px;
     background-color: #323746;
-    display: block;
 }
 
 header .logo {
@@ -79,7 +84,6 @@ header .logo {
     font-family: "Lato-Bold";
     font-size: 25px;
     letter-spacing: -0.03em;
-    text-shadow: 0px 0px 2px #96989d;
 }
 
 header .logo .logo-red {
@@ -126,8 +130,104 @@ section.slider .container .slide .slide-image {
 }
 
 section.slider:after {
-    content: "";
-    height: 6px;
     background-color: #ea676b;
-    display: block;
+}
+
+section.slider .container .slider-arrow:hover {
+    opacity: 0.6;
+}
+
+/*services*/
+section.services .container {
+    color: #666d89;
+    background-color: #f2f2f2;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+section.services .container .title {
+    font-family: 'Lato-Black';
+    font-size: 30px;
+}
+
+section.services .container .description {
+    padding-top: 18px;
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    color: #767e9e;
+    line-height: 1.65em;
+    text-align: justify;
+}
+
+section.services .services-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    justify-content: space-between;
+}
+
+section.services .services-items-container .services-item {
+    display: flex;
+    align-items: flex-start;
+    height: 90px;
+    width: 300px;
+    overflow: hidden;
+    margin-top: 33px;
+}
+
+section.services .services-items-container .item-description {
+    padding-left: 20px;
+}
+
+section.services .services-items-container .item-description h3 {
+    font-family: 'Lato-Black';
+    font-size: 18px;
+    letter-spacing: -0.01em
+}
+
+section.services .services-items-container .item-description p {
+    text-align: justify;
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    line-height: 1.8em;
+    color: #767e9e;
+    padding-top: 8px;
+}
+
+section.services .services-items-container .item-icon {
+    min-width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #666d89;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 3px;
+}
+
+section.services .services-items-container .item-icon.pen {
+    background-image: url("./assets/images/pen.png");
+}
+
+section.services .services-items-container .item-icon.bulb {
+    background-image: url("./assets/images/bulb.png");
+}
+
+section.services .services-items-container .item-icon.heart {
+    background-image: url("./assets/images/heart.png");
+}
+
+section.services .services-items-container .item-icon.phone {
+    background-image: url("./assets/images/phone.png");
+}
+
+section.services .services-items-container .item-icon.bubble {
+    background-image: url("./assets/images/bubble.png");
+}
+
+section.services .services-items-container .item-icon.star {
+    background-image: url("./assets/images/star.png");
+}
+
+section.services:after {
+    background-color: #ffffff;
 }
