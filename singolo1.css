@@ -129,6 +129,10 @@ section.slider:after {
     background-color: #ea676b;
 }
 
+section.slider .container .slider-arrow {
+    cursor: pointer;
+}
+
 section.slider .container .slider-arrow:hover {
     opacity: 0.6;
 }
