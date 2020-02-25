@@ -91,11 +91,26 @@ header nav {
 }
 
 header nav a {
+    position: relative;
     color: #ffffff;
     font-family: "Lato-Bold";
     letter-spacing: -0.02em;
     font-size: 12px;
     margin-left: 26px;
+}
+
+header nav a:before {
+    content: ".";
+    color: #494e62;
+    font-weight: 900;
+    display: block;
+    left: -16px;
+    top: -2px;
+    position: absolute;
+}
+
+header nav a:first-of-type:before {
+    visibility: hidden;
 }
 
 header nav a:hover {
