@@ -176,3 +176,122 @@ section.portfolio .portfolio-images-container .portfolio-image:nth-of-type(n+13)
 section.portfolio:after {
     background-color: #323746;
 }
+
+/*about us*/
+section.about-us {
+    background-color: #f2f2f2;
+}
+
+section.about-us .container .title {
+    font-family: 'Lato-Black';
+    font-size: 30px;
+    color: #666d89;
+    letter-spacing: -0.01em;
+}
+
+section.about-us .container {
+    padding-top: 60px;
+    padding-bottom: 22px;
+}
+
+section.about-us .container .description {
+    padding-top: 18px;
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    color: #767e9e;
+    line-height: 1.65em;
+    text-align: justify;
+}
+
+section.about-us .container .description {
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    color: #767e9e;  
+}
+
+section.about-us .about-us-items-container {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 46px 0;
+}
+
+section.about-us .about-us-item {
+    max-width: 300px;
+}
+
+section.about-us .about-us-item .about-us-item-photo {
+    width: 100%;
+    padding-bottom: 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+section.about-us .about-us-item .about-us-item-photo.photo-1 {
+    background-image: url("./assets/images/adam.png");
+}
+
+section.about-us .about-us-item .about-us-item-photo.photo-2 {
+    background-image: url("./assets/images/desmond.png");
+}
+
+section.about-us .about-us-item .about-us-item-photo.photo-3 {
+    background-image: url("./assets/images/scolara.png");
+}
+
+section.about-us .about-us-item .item-description {
+    padding-top: 15px;
+}
+
+section.about-us .about-us-item .item-description h3 {
+    font-family: 'Lato-Black';
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: #666d89;
+    line-height: 1.2em;
+    height: 1.2em;
+    overflow: hidden;
+}
+
+section.about-us .about-us-item .item-description p {
+    text-align: justify;
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    line-height: 1.8em;
+    color: #767e9e;
+    padding-top: 8px;
+    letter-spacing: -0.005em;
+}
+
+section.about-us .about-us-item .about-us-item-links {
+    padding-top: 24px;
+    display: flex;
+}
+
+section.about-us .about-us-item .about-us-item-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #767e9e;
+    border-radius: 50%;
+    padding: 7px;
+    margin-right: 9px;
+}
+
+section.about-us .about-us-item .about-us-item-links a svg {
+    width: 15px;
+    height: 15px;
+    color: #767e9e;
+}
+
+section.about-us .about-us-item .about-us-item-links a svg path { 
+    fill: #767e9e;;
+}
+
+section.about-us:after {
+    background-color: #ffffff;
+}
+
+section.about-us .about-us-item .about-us-item-links a:hover {
+    opacity: 0.6;
+}
