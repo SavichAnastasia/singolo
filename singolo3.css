@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('assets/fonts/Lato/Lato-Regular.woff') format('woff'),
+         url('assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('assets/fonts/Lato/Lato-Bold.woff') format('woff'),
+         url('assets/fonts/Lato/Lato-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Light';
+    src: url('assets/fonts/Lato/Lato-Light.woff') format('woff'),
+         url('assets/fonts/Lato/Lato-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato-Black';
+    src: url('assets/fonts/Lato/Lato-Black.woff') format('woff'),
+         url('assets/fonts/Lato/Lato-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+.container {
+	max-width: 1020px;
+	width: 100%;
+	padding: 0 40px;
+    margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+textarea {
+    resize: none;
+}
+
+section:after {
+    content: "";
+    height: 6px;
+    display: block;
+}
+
+/*quote*/
+section.quote {
+    background: #f06c64;
+}
+
+section.quote:after {
+    background: #ea676b;
+}
+
+section.quote .container {
+    padding-top: 59px;
+    padding-bottom: 23px;
+}
+
+section.quote .container .title {
+    font-family: 'Lato-Black';
+    font-size: 30px;
+    letter-spacing: -0.01em;
+    color: #f0d8d9;
+}
+
+section.quote .container .description {
+    padding-top: 18px;
+    font-family: 'Lato-Light';
+    font-size: 18px;
+    color: #f0d8d9;
+    line-height: 1.65em;
+    text-align: justify;
+}
+
+section.quote .quote-main {
+    padding-top: 28px;
+    display: flex;
+}
+
+section.quote .quote-main form.quote-item {
+    width: 66%;
+    padding-top: 3px;
+}
+
+section.quote form input, section.quote form textarea {
+    background: #d6564f;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    color: #f0d8d9;
+    font-size: 12px;
+    font-family: 'Lato-Regular';
+    outline: none;
+    padding-left: 14px;
+}
+
+section.quote form input {
+    height: 38px;
+    margin-top: 15px;
+}
+
+section.quote form input:focus:invalid {
+    border: 1px solid #B22222;
+    color: #B22222;
+}
+
+section.quote form textarea {
+    margin-top: 17px;
+    height: 202px;
+    padding-top: 11px;
+}
+
+::placeholder {
+    color: #f48c8f;
+    font-size: 12px;
+    font-family: 'Lato-Regular';
+}
+
+section.quote form .submit-button {
+    display: block;
+    background: #d6564f;
+    color: #f0d8d9;
+    font-size: 12px;
+    font-family: 'Lato-Regular';
+    border: none;
+    border-radius: 5px;
+    padding: 5px 8px;
+    cursor: pointer;
+    margin: 10px auto 5px;
+}
+
+section.quote form .submit-button:hover {
+    opacity: .6;
+}
+
+section.quote .quote-main .quote-item.contacts h3 {
+    font-family: 'Lato-Black';
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: #f0d8d9;
+}
+
+section.quote .quote-main .quote-item.contacts {
+    width: 34%;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+section.quote .quote-main .quote-item.contacts p {
+    text-align: justify;
+    font-family: 'Lato-Regular';
+    font-size: 12px;
+    line-height: 1.8em;
+    color: #f0d8d9;
+    letter-spacing: -0.005em;
+    padding-top: 10px;
+}
+
+section.quote .quote-main .quote-item.contacts p {
+    padding-top: 10px;   
+}
+
+section.quote .quote-main .quote-item.contacts ul {
+    padding-top: 25px;   
+}
+
+section.quote .quote-main .quote-item.contacts ul li:first-of-type a {
+    padding: 0 2px;
+}
+
+section.quote .quote-main .quote-item.contacts ul .text {
+    padding-left: 10px;
+    letter-spacing: 0.006em;
+    font-family: 'Lato-Regular';
+    line-height: 1.8em;
+    font-size: 12px;
+    color: #f0d8d9;
+}
