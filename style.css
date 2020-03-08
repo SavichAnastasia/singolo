@@ -65,7 +65,7 @@ header {
 
 header .container {
     display: flex;
-    padding-top: 30px;
+    padding-top: 29px;
     padding-bottom: 29px;
     justify-content: space-between;
     align-items: center;
@@ -159,7 +159,7 @@ section.services {
 
 section.services .container {
     color: #666d89;
-    padding-top: 59px;
+    padding-top: 60px;
     padding-bottom: 65px;
 }
 
@@ -382,7 +382,7 @@ section.about-us .container .title {
 
 section.about-us .container {
     padding-top: 59px;
-    padding-bottom: 21px;
+    padding-bottom: 22px;
 }
 
 section.about-us .container .description {
