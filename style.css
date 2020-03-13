@@ -117,6 +117,10 @@ header nav a:hover {
     color: #f06c64;
 }
 
+header nav a.active {
+    color: #f06c64;
+}
+
 /*slider*/
 
 section.slider {
