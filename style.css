@@ -30,6 +30,14 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+}
+
 * {
     font-family: sans-serif;
 	margin: 0;
@@ -61,6 +69,10 @@ header:after, section:after {
 header {
     background-color: #2d303a;
     text-transform: uppercase;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 header .container {
@@ -113,7 +125,7 @@ header nav a:first-of-type:before {
     visibility: hidden;
 }
 
-header nav a:hover {
+header nav a:hover  {
     color: #f06c64;
 }
 
@@ -122,39 +134,174 @@ header nav a.active {
 }
 
 /*slider*/
-
 section.slider {
-    background-color: #f06c64;
+    padding-top: 93px;
+    overflow: hidden;
 }
 
-section.slider .container {
+section.slider .slider-wrapper {
+    position: relative;
     display: flex;
+    top: 0;
+    left: 0; 
+}
+
+section.slider .slide.slide-1 {
+    background-color: #f06c64;
+    padding: 54px 0;
+}
+
+section.slider .slide  {
+    position: relative;
+    min-width: 100%;
+    display: none;
     align-items: center;
     justify-content: space-between;
-    padding: 52px 42px 59px;
+    border-bottom: 6px solid #ea676b; 
+    animation: 0.5s ease-in-out;
 }
 
-section.slider .container .slide {
+section.slider .slide.active,
+section.slider .slide.next {
+    display: flex;
+}
+
+section.slider .slide.next {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+section.slider .slide.to-left {
+    animation-name: left;
+}
+
+section.slider .slide.from-right {
+    animation-name: right;
+}
+
+section.slider .slide.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+section.slider .slide.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
+section.slider .slide .container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 0 40px;
 }
 
-section.slider .container .slide .slide-image {
+section.slider .slide-2 {
+    background-color: #648BF0;
+    padding: 42px 0;
+    border-bottom: 6px solid #648BF0;
+}
+
+section.slider .slide.slide-2 .container .slide-image {
+    margin: 0 -14px;
+    padding-right: 0;
+}
+
+section.slider .slide .slide-image {
     margin: 0 36px;
+    position: relative;
+}
+
+section.slider .iphone-vertical-base, section.slider .iphone-horizontal-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section.slider .iphone-vertical-screen.hidden, section.slider .iphone-horizontal-screen.hidden {
+    opacity: 0;
+} 
+
+section.slider .slide-1 .iphone-vertical-screen {
+    position: absolute;
+    top: 65px;
+    left: 16px;
+}
+
+section.slider .slide-1 .iphone-horizontal-screen {
+    position: absolute;
+    top: 15px;
+    left: 61px;
+}
+
+section.slider .iphone-vertical-shadow, section.slider .iphone-horizontal-shadow {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+section.slider .slide .slide-image.small-phone {
+    opacity: .5;
+}
+
+section.slider .slide .slide-image.big-phone {
+    z-index: 1;
 }
 
 section.slider:after {
-    background-color: #ea676b;
+    display: none;
 }
 
-section.slider .container .slider-arrow {
+section.slider .slider-arrow {
     cursor: pointer;
+    position: absolute;
+    margin: 0 auto;
+    top: 50% ;
+    transform: translateY(-50%);
 }
 
-section.slider .container .slider-arrow:hover {
+section.slider .slider-arrow:hover {
     opacity: 0.6;
 }
+
+section.slider .slider-arrow.left {
+    left: calc((100% - 1020px) / 2 + 16px);
+}
+
+section.slider .slider-arrow.right {
+    right: calc((100% - 1020px) / 2 + 16px);
+}
+
+@media(max-width: 1020px) {
+    section.slider .slider-arrow.left {
+        left: 4%;
+    }
+    
+    section.slider .slider-arrow.right {
+        right: 4%;
+    }
+}
+
+
 
 /*services*/
 section.services {
@@ -295,11 +442,18 @@ section.portfolio .portfolio-menu button {
     margin-left: 5px;
     background-color: #2d303a;
     cursor: pointer;
+    outline: none;
 }
 
 section.portfolio .portfolio-menu button:hover {
     color: #dedede;
     border: 1px solid #dedede;
+}
+
+section.portfolio .portfolio-menu button.active {
+    color: #dedede;
+    border: 1px solid #dedede;
+    cursor: auto;
 }
 
 section.portfolio .portfolio-images-container {
@@ -314,6 +468,13 @@ section.portfolio .portfolio-image {
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 17px;
+    cursor: pointer;
+    border: 0px solid #F06C64;
+    transition: all .2s;
+}
+
+section.portfolio .portfolio-image.active {
+    border: 5px solid #F06C64;
 }
 
 section.portfolio .portfolio-image.pi-1 {
