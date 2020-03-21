@@ -244,11 +244,11 @@
                     Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
                 </p>
                 <div class="quote-main">
-                    <form class="quote-item">
-                        <input required type="text" placeholder="Name (Required)">
-                        <input required type="email" placeholder="Email (Required)">
-                        <input type="text" placeholder="Subject">
-                        <textarea placeholder="Describe your project in detail..."></textarea>
+                    <form class="quote-item" name="quote">
+                        <input required type="text" placeholder="Name (Required)" maxlength="60">
+                        <input required type="email" placeholder="Email (Required)" maxlength="60">
+                        <input name="subject" type="text" placeholder="Subject" maxlength="60">
+                        <textarea name="description" placeholder="Describe your project in detail..." maxlength="1000"></textarea>
                         <button type="submit" class="submit-button">Submit</button>
                     </form>
                     <div class="quote-item contacts">
@@ -287,6 +287,15 @@
             </div>
         </div>
     </footer>
+    <div class="modal hidden">
+        <div class="modal-cover"></div>
+        <div class="modal-window">
+            <h3>The letter was sent</h3>
+            <p>Subject: <span class="subject"></span></p>
+            <p>Description: <span class="description"></span></p>
+            <button>ok</button>
+        </div>
+    </div>
     <script src="./script.js" type="text/javascript"></script>            
 </body>
 </html>

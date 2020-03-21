@@ -30,6 +30,24 @@
     font-style: normal;
 }
 
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -163,7 +181,7 @@ section.slider .slide  {
 
 section.slider .slide.active,
 section.slider .slide.next {
-    display: flex;
+    display: block;
 }
 
 section.slider .slide.next {
@@ -188,24 +206,6 @@ section.slider .slide.to-right {
 section.slider .slide.from-left {
     animation-name: left;
     animation-direction: reverse;
-}
-
-@keyframes left {
-    from {
-        left: 0;
-    }
-    to {
-        left: -100%;
-    }
-}
-
-@keyframes right {
-    from {
-        left: 100%;
-    }
-    to {
-        left: 0;
-    }
 }
 
 section.slider .slide .container {
@@ -728,7 +728,7 @@ section.quote form textarea {
     font-family: 'Lato-Regular';
 }
 
-section.quote form .submit-button {
+section.quote form .submit-button, .modal button {
     display: block;
     background: #d6564f;
     color: #f0d8d9;
@@ -739,9 +739,10 @@ section.quote form .submit-button {
     padding: 5px 8px;
     cursor: pointer;
     margin: 10px auto 5px;
+    outline: none;
 }
 
-section.quote form .submit-button:hover {
+section.quote form .submit-button:hover, .modal button:hover {
     opacity: .6;
 }
 
@@ -831,4 +832,55 @@ footer .media a svg {
 
 footer .media a svg path { 
     fill: #666d89;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.modal-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9000;
+    width: 100%;
+    height: 100%;
+    background-color: #808080;
+    opacity: 0.4;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-window {
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background:#fcf4f2;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Lato-Regular';
+    line-height: 1.8em;
+    font-size: 16px;
+    color: #E8A2A2;
+    max-width: 40%;
+}
+
+.modal h3, .modal span {
+    color: #B22222;
+    border-bottom: 1px solid #E8A2A2;
+    word-break: break-word;
+}
+
+.modal p {
+    padding-top: 15px;
+    text-align: left;
 }

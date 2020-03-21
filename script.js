@@ -99,6 +99,7 @@ portfolioMenu.addEventListener('click', (e) => {
 })
 
 portfolioImagesContainer.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('portfolio-image')) return;
     const clicked = e.target.classList.contains('active');
     portfolioImages.forEach(image => {
         image.classList.remove('active');
@@ -107,3 +108,37 @@ portfolioImagesContainer.addEventListener('click', (e) => {
 })
 
 //quote
+const modal = document.querySelector('.modal');
+const subject = document.querySelector('.modal .subject');
+const description = document.querySelector('.modal .description');
+const quoteForm = document.forms.quote;
+const formInputs = [...quoteForm.elements];
+
+quoteForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    subject.textContent = this.elements.subject.value || 'No subject';
+    description.textContent = this.elements.description.value || 'No description';
+    showModal()
+})
+
+function showModal () {
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function hideModal () {
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    
+    formInputs.forEach(el => {
+        el.value = '';
+    })
+}
+
+modal.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('modal-window')) hideModal()
+})
+
+document.querySelector('.modal button').addEventListener('click', (e) => {
+    hideModal()
+})
