@@ -90,7 +90,11 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
+}
+
+header .modal-cover {
+    display: none;
 }
 
 header .container {
@@ -99,6 +103,18 @@ header .container {
     padding-bottom: 29px;
     justify-content: space-between;
     align-items: center;
+}
+
+header .container .burger-btn {
+    background-color: #2d303a;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    display: none;
+    position: absolute;
+    top: 27px;
+    left: 21px;
+    transition: all .5s;
 }
 
 header:after {
@@ -110,6 +126,7 @@ header .logo {
     font-family: "Lato-Bold";
     font-size: 25px;
     letter-spacing: -0.03em;
+    transition: all .5s;
 }
 
 header .logo .logo-red {
@@ -118,6 +135,7 @@ header .logo .logo-red {
 
 header nav {
     margin-top: 9px;
+    transition: all .5s;
 }
 
 header nav a {
@@ -143,9 +161,6 @@ header nav a:first-of-type:before {
     visibility: hidden;
 }
 
-header nav a:hover  {
-    color: #f06c64;
-}
 
 header nav a.active {
     color: #f06c64;
@@ -166,16 +181,15 @@ section.slider .slider-wrapper {
 
 section.slider .slide.slide-1 {
     background-color: #f06c64;
-    padding: 54px 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 6px solid #ea676b; 
 }
 
 section.slider .slide  {
     position: relative;
     min-width: 100%;
     display: none;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 6px solid #ea676b; 
     animation: 0.5s ease-in-out;
 }
 
@@ -208,22 +222,25 @@ section.slider .slide.from-left {
     animation-direction: reverse;
 }
 
-section.slider .slide .container {
+section.slider .slide-1 .container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 40px;
+    height: calc(1020px * 0.583);
 }
 
 section.slider .slide-2 {
     background-color: #648BF0;
-    padding: 42px 0;
-    border-bottom: 6px solid #648BF0;
+    border-bottom: 6px solid #648BF0; 
 }
 
-section.slider .slide.slide-2 .container .slide-image {
-    margin: 0 -14px;
-    padding-right: 0;
+section.slider .slide.slide-2 .container {
+    background-image: url('./assets/images/Slide-2.png');
+    width: 100%;
+    padding-bottom: calc(1020px * 0.583);
+    background-position: center;
+    background-size: cover;
 }
 
 section.slider .slide .slide-image {
@@ -231,40 +248,71 @@ section.slider .slide .slide-image {
     position: relative;
 }
 
-section.slider .iphone-vertical-base, section.slider .iphone-horizontal-base {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 section.slider .iphone-vertical-screen.hidden, section.slider .iphone-horizontal-screen.hidden {
     opacity: 0;
 } 
 
-section.slider .slide-1 .iphone-vertical-screen {
-    position: absolute;
-    top: 65px;
-    left: 16px;
-}
-
-section.slider .slide-1 .iphone-horizontal-screen {
-    position: absolute;
-    top: 15px;
-    left: 61px;
-}
 
 section.slider .iphone-vertical-shadow, section.slider .iphone-horizontal-shadow {
     position: relative;
     top: 0;
     left: 0;
+    background-size: cover;
 }
 
-section.slider .slide .slide-image.small-phone {
-    opacity: .5;
+section.slider .iphone-vertical-shadow {
+    width: calc(1020px * 0.2353);
+    background-image: url('./assets/images/iPhone Vertical shadow.png');
+    padding-bottom: calc(100% * 2.0125);
 }
 
-section.slider .slide .slide-image.big-phone {
-    z-index: 1;
+section.slider .iphone-horizontal-shadow {
+    width: calc(1020px * 0.4735);
+    background-image: url('./assets/images/iPhone Horizontal shadow.png');
+    padding-bottom: calc(100% * 0.4969);
+}
+
+
+section.slider .iphone-vertical-base, section.slider .iphone-horizontal-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+section.slider .iphone-vertical-base {
+    width: calc(1020px * 0.2117);
+    background-image: url(./assets/images/iPhone\ Vertical\ Base.png);
+    padding-bottom: calc(1020px * 0.2117 * 2.1204);
+}
+
+section.slider .iphone-horizontal-base {
+    width: calc(1020px * 0.4490);
+    background-image: url('./assets/images/iPhone\ Horizontal\ Base.png');
+    padding-bottom: calc(100% * 0.4716);
+}
+
+section.slider .slide-1 .iphone-vertical-screen {
+    position: absolute;
+    top: 13.5%;
+    left: 6%;
+    width: calc(1020px * 0.1843);
+    padding-bottom: calc(1020px * 0.1843 * 1.7713);
+    background-image: url('./assets/images/iPhone\ Vertical\ Screen.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+section.slider .slide-1 .iphone-horizontal-screen {
+    position: absolute;
+    top: 6%;
+    left: 12.5%;
+    width: calc(1020px * 0.3265);
+    padding-bottom: calc(1020px * 0.3265 * 0.5646);
+    background-image: url('./assets/images/iPhone\ Horizontal\ Screen.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 section.slider:after {
@@ -279,29 +327,13 @@ section.slider .slider-arrow {
     transform: translateY(-50%);
 }
 
-section.slider .slider-arrow:hover {
-    opacity: 0.6;
-}
-
 section.slider .slider-arrow.left {
-    left: calc((100% - 1020px) / 2 + 16px);
+    left: calc((100% - 1020px) / 2 + 40px);
 }
 
 section.slider .slider-arrow.right {
-    right: calc((100% - 1020px) / 2 + 16px);
+    right: calc((100% - 1020px) / 2 + 40px);
 }
-
-@media(max-width: 1020px) {
-    section.slider .slider-arrow.left {
-        left: 4%;
-    }
-    
-    section.slider .slider-arrow.right {
-        right: 4%;
-    }
-}
-
-
 
 /*services*/
 section.services {
@@ -409,7 +441,7 @@ section.portfolio {
 section.portfolio .container {
     color: #666d89;
     padding-top: 59px;
-    padding-bottom: 66px;
+    padding-bottom: 35px;
 }
 
 section.portfolio .container .title {
@@ -445,11 +477,6 @@ section.portfolio .portfolio-menu button {
     outline: none;
 }
 
-section.portfolio .portfolio-menu button:hover {
-    color: #dedede;
-    border: 1px solid #dedede;
-}
-
 section.portfolio .portfolio-menu button.active {
     color: #dedede;
     border: 1px solid #dedede;
@@ -460,17 +487,20 @@ section.portfolio .portfolio-images-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 17px -14px;
 }
 
 section.portfolio .portfolio-image {
-    width: 220px;
-    height: 190px;
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 17px;
+    margin: 8px;
     cursor: pointer;
     border: 0px solid #F06C64;
     transition: all .2s;
+    flex: 1 0 20%;
+    padding-bottom: 18.8%;
+    border: 5px solid rgba(0, 0, 0, 0);
+    background-size: cover;
 }
 
 section.portfolio .portfolio-image.active {
@@ -570,10 +600,12 @@ section.about-us .about-us-items-container {
     justify-content: space-between;
     align-content: flex-start;
     padding: 46px 0;
+    margin: 0 -1%;
 }
 
 section.about-us .about-us-item {
     max-width: 300px;
+    margin: 0 1%;
 }
 
 section.about-us .about-us-item .about-us-item-photo {
@@ -581,6 +613,7 @@ section.about-us .about-us-item .about-us-item-photo {
     padding-bottom: 100%;
     background-position: left;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 section.about-us .about-us-item .about-us-item-photo.photo-1 {
@@ -647,10 +680,6 @@ section.about-us .about-us-item .about-us-item-links a svg path {
 
 section.about-us:after {
     background-color: #ffffff;
-}
-
-section.about-us .about-us-item .about-us-item-links a:hover {
-    opacity: 0.6;
 }
 
 /*quote*/
@@ -730,21 +759,19 @@ section.quote form textarea {
 
 section.quote form .submit-button, .modal button {
     display: block;
-    background: #d6564f;
-    color: #f0d8d9;
-    font-size: 12px;
-    font-family: 'Lato-Regular';
+    background: #FBC65F;
+    color: #886A30;
+    font-size: 14px;
+    font-family: 'Lato-Bold';
     border: none;
     border-radius: 5px;
-    padding: 5px 8px;
+    padding: 14px 50px 10px;
     cursor: pointer;
-    margin: 10px auto 5px;
     outline: none;
+    text-transform: uppercase;
+    margin: 11px 0;
 }
 
-section.quote form .submit-button:hover, .modal button:hover {
-    opacity: .6;
-}
 
 section.quote .quote-main .quote-item.contacts h3 {
     font-family: 'Lato-Black';
@@ -820,9 +847,6 @@ footer .media a {
     margin-left: 9px;
 }
 
-footer .media a:hover {
-    opacity: .6;
-}
 
 footer .media a svg {
     width: 15px;
@@ -850,8 +874,8 @@ footer .media a svg path {
     z-index: 9000;
     width: 100%;
     height: 100%;
-    background-color: #808080;
-    opacity: 0.4;
+    background: #2D303A;
+    opacity: 0.6;
 }
 
 .modal.hidden {
@@ -883,4 +907,377 @@ footer .media a svg path {
 .modal p {
     padding-top: 15px;
     text-align: left;
+}
+
+@media(max-width: 1019px) {
+
+    header nav {
+        margin-top: 0.5%;
+    }
+
+    section.slider .slide.slide-2 .container {
+        padding-bottom: calc(100vw * 0.583);
+    }
+
+    section.portfolio .container .description {
+        padding-right: 6%;
+    }
+
+    section.slider .slide-1 .container {
+        height: calc(100vw * 0.583);
+    }
+
+    section.slider .slide-1 .slide-image {
+        margin: 0 3.5%;
+    }
+
+    section.slider .iphone-horizontal-shadow {
+        width: calc(100vw * 0.4735);
+    }
+
+    section.slider .iphone-vertical-shadow {
+        width: calc(100vw * 0.2353);
+    }
+    
+    section.slider .iphone-vertical-base {
+        width: calc(100vw * 0.2118);
+    }
+
+    section.slider .iphone-horizontal-base {
+        width: calc(100vw * 0.4490);
+    }
+
+    section.slider .slide-1 .iphone-vertical-screen {
+        width: calc(100vw * 0.1843);
+        padding-bottom: calc(100vw * 0.1843 * 1.7713);
+    }
+
+    section.slider .slide-1 .iphone-horizontal-screen {
+        width: calc(100vw * 0.3265);
+        padding-bottom: calc(100vw * 0.3265 * 0.5646);
+    }
+
+    section.slider .slider-arrow.left {
+        left: 4%;
+    }
+    
+    section.slider .slider-arrow.right {
+        right: 4%;
+    }
+
+    section.services .container {
+        padding-top: 5.34%;
+        padding-bottom: 5.73%;
+    }
+
+    section.services .services-items-container {
+        padding-top: 4px;
+    }
+
+    section.services .services-items-container .services-item {
+        margin-top: 4%;
+        margin-bottom: 4%;
+        margin-right: 5%;
+    }
+
+    section.portfolio .portfolio-image {
+        flex: 1 0 25%;
+        padding-bottom: 25%;
+    }
+
+    section.about-us .about-us-items-container {
+        padding: 5.5% 0;
+    }
+
+    section.about-us .container {
+        padding-top: 7%;
+        padding-bottom: 4%;
+    }
+
+    section.about-us .about-us-item .item-description {
+        padding-top: 5%;
+    }
+
+    section.about-us .about-us-item .item-description p {
+        padding-top: 1%;
+    }
+
+    section.about-us .about-us-item .about-us-item-links {
+        padding-top: 5%;
+    }
+
+    section.quote .container {
+        padding-top: 7%;
+    }
+
+    section.quote .quote-main {
+        padding-top: 1%;
+    }
+
+    section.quote .quote-main form.quote-item {
+        width: 64%;
+    }
+
+    section.quote .quote-main .quote-item.contacts {
+        width: 34%;
+        padding-left: 4%;
+    }
+
+    section.quote form input {
+        margin-top: 3%;
+    }
+
+    section.quote form textarea {
+        margin-top: 3%;
+        height: 161px;
+    }
+
+    section.quote .quote-main .quote-item.contacts p {
+        padding-top: 1%;
+    }
+
+    section.quote .quote-main .quote-item.contacts ul {
+        padding-top: 5%;
+    }
+} 
+
+
+@media(max-width: 767px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    header .container {
+        position: relative;
+        padding-top: 25px;
+        padding-bottom: 16px;
+    }
+
+    header .container .burger-btn {
+        display: block;
+    }
+    
+    header .logo {
+        font-size: 20px;
+        margin: 0 calc((100% - 106px)/2);;
+        transition: all .5s;
+    }
+
+    header.burger .logo {
+        margin-left: 41px;
+        z-index: 1;
+        transition: all .5s;
+    }
+
+    header.burger .container .burger-btn {
+        transform: rotate(90deg);
+        z-index: 1;
+    }
+
+    header nav {
+        width: 0;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        justify-content: center;
+        background: #2D303A;
+        box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+        margin-top: 0;
+        transition: all .5s;
+    }
+
+    header nav a {
+        display: none;
+    }
+
+    header.burger nav {
+        padding-left: 71px;
+        width: 278px;
+    }
+
+    header.burger .modal-cover {
+        z-index: 0;
+        top: 0;
+        display: block;
+    }
+
+    header.burger nav a {
+        font-size: 24px;
+        margin: 14px 0;
+        display: block;
+    }
+
+    header.burger nav a:first-of-type {
+        margin-top: 148px;
+    }
+
+    header.burger nav a:before {
+        display: none;
+    }
+
+    section.slider {
+        padding-top: 72px;
+    }
+
+    section.slider .slider-arrow.left {
+        left: 2%;
+    }
+    
+    section.slider .slider-arrow.right {
+        right: 2%;
+    }
+
+    section.services .container .description {
+        letter-spacing: 0.01em;
+    }
+
+    section.services .services-items-container {
+        margin: 0;
+    }
+
+    section.services .services-items-container .services-item {
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    section.services .container {
+        padding-bottom: 1%;
+    }
+
+    section.services .services-items-container .services-item {
+        margin-right: calc((100% - 300px) / 2);
+    }
+
+    section.portfolio .container {
+        padding-top: 42px;
+        padding-bottom: 10px;
+    }
+
+    section.portfolio .portfolio-image {
+        flex: 1 0 40%;
+        padding-bottom: 37.5%;
+        margin: 3px;
+    }
+
+    section.portfolio .portfolio-images-container .portfolio-image:nth-of-type(n+9) {
+        display: none;
+    }
+
+    section.portfolio .portfolio-images-container {
+        margin: 21px -10px;
+    }
+
+    section.about-us .container {
+        padding-top: 9%;
+        padding-bottom: 3.2%;
+    }
+
+    section.about-us .container .description {
+        letter-spacing: 0.01em;
+    }
+
+    section.about-us .about-us-items-container {
+        padding: 10px 0;
+    }
+
+    section.about-us .about-us-item .about-us-item-links {
+        padding-top: 3%;
+    }
+
+    section.about-us .about-us-item {
+        margin: 5.5% 1%;
+    }
+
+    section.about-us .about-us-items-container {
+        justify-content: space-between;
+        align-content: flex-start;
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    section.about-us .about-us-item {
+        min-width: 100%;
+        margin: 5.5% 1%;
+    }
+
+    section.quote .container {
+        padding-top: 11%;
+        padding-bottom: 10%;
+    }
+
+    section.quote .container .description {
+        letter-spacing: 0.01em;
+    }
+
+    section.quote .quote-main {
+        padding-top: 4%;
+        flex-direction: column;
+    }
+
+    section.quote .quote-main form.quote-item {
+        width: 100%;
+    }
+
+    section.quote form input {
+        margin-top: 4%;
+    }
+
+    section.quote form .submit-button, .modal button {
+        padding: 15px 50px 15px;
+        width: 100%;
+    }
+
+    section.quote .quote-main .quote-item.contacts {
+        width: 100%;
+        margin-top: 18px;
+        padding-left: 0px;
+    }
+
+    footer .container {
+        justify-content: center;
+    }
+
+    footer .footer-item.copyright {
+        display: none;
+    }
+
+    .modal-window {
+        max-width: 80%;
+    }
+
+}
+
+@media (hover: hover) {
+    section.slider .slider-arrow:hover {
+        opacity: 0.6;
+    }
+    
+    nav a:hover  {
+        color: #f06c64;
+    }
+
+    section.portfolio .portfolio-menu button:hover {
+        color: #dedede;
+        border: 1px solid #dedede;
+    }
+
+    section.about-us .about-us-item .about-us-item-links a:hover {
+        opacity: 0.6;
+    }
+
+    section.quote form .submit-button:hover, .modal button:hover {
+        opacity: .6;
+    }
+
+    footer .media a:hover {
+        opacity: .6;
+    }
+
+    header .container .burger-btn:hover {
+        opacity: .6;
+    }
+
 }

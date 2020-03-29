@@ -84,7 +84,7 @@ document.querySelector('.iphone-vertical-base').addEventListener('click', (e) =>
 const portfolioMenu = document.querySelector('.portfolio-menu');
 const portfolioBtns = document.querySelectorAll('.portfolio-menu button');
 const portfolioImages = document.querySelectorAll('.portfolio-image');
-const portfolioImagesContainer = document.querySelector('.portfolio-images-container')
+const portfolioImagesContainer = document.querySelector('.portfolio-images-container');
 
 
 portfolioMenu.addEventListener('click', (e) => {
@@ -94,8 +94,15 @@ portfolioMenu.addEventListener('click', (e) => {
     })
 
     e.target.classList.add('active');
-    const portfolioImages = document.querySelectorAll('.portfolio-image');
-    portfolioImagesContainer.insertBefore(portfolioImages[portfolioImages.length - 1], portfolioImages[0])
+    const newPortfolioImages = [...document.querySelectorAll('.portfolio-image')];
+    portfolioImagesContainer.innerHTML = '';
+    for (let i = 0; i < newPortfolioImages.length; i++) {
+        if (i === portfolioImages.length - 1) {
+            portfolioImagesContainer.append([...newPortfolioImages][0])
+        } else {
+            portfolioImagesContainer.append([...newPortfolioImages][i + 1])
+        }
+    }
 })
 
 portfolioImagesContainer.addEventListener('click', (e) => {
@@ -141,4 +148,17 @@ modal.addEventListener('click', (e) => {
 
 document.querySelector('.modal button').addEventListener('click', (e) => {
     hideModal()
+})
+
+
+//header 375px
+const header = document.querySelector('header');
+const cover = document.querySelector('header .modal-cover')
+
+document.querySelector('.burger-btn').addEventListener('click', (e) => {
+    header.classList.toggle('burger');
+})
+
+cover.addEventListener('click', (e) => {
+    header.classList.remove('burger');
 })

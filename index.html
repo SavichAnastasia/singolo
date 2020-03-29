@@ -3,11 +3,14 @@
 <head>
     <link rel='stylesheet' href='./style.css'>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Singolo</title>
 </head>
 <body>
     <header>
+        <div class="modal-cover"></div>
         <div class="container">
+            <button class="burger-btn"><img alt="button" src="./assets/images/Burger-menu-icon.png"></button>
             <h1 class="logo">
                 SINGOLO<span class="logo-red">*</span>
             </h1>
@@ -26,22 +29,19 @@
                 <div class="slide slide-1 active">
                     <div class="container">
                         <div class="iphone-vertical slide-image">
-                            <img class="iphone-vertical-shadow" src="./assets/images/iPhone Vertical shadow.png" alt="iPhone shadow">
-                            <img class="iphone-vertical-base" src="./assets/images/iPhone Vertical Base.png" alt="iPhone">
-                            <img class="iphone-vertical-screen" src="./assets/images/iPhone Vertical Screen.png" alt="iPhone screen">
+                            <div class="iphone-vertical-shadow"></div>
+                            <div class="iphone-vertical-base"></div>
+                            <div class="iphone-vertical-screen"></div>
                         </div>
                         <div class="iphone-horizontal slide-image">
-                            <img class="iphone-horizontal-shadow" src="./assets/images/iPhone Horizontal shadow.png" alt="iPhone shadow">
-                            <img class="iphone-horizontal-base" src="./assets/images/iPhone Horizontal Base.png" alt="iPhone">
-                            <img class="iphone-horizontal-screen" src="./assets/images/iPhone Horizontal Screen.png" alt="iPhone screen">
+                            <div class="iphone-horizontal-shadow"></div>
+                            <div class="iphone-horizontal-base"></div>
+                            <div class="iphone-horizontal-screen"></div>
                         </div>
                     </div>
                 </div>
                 <div class="slide slide-2">
                     <div class="container">
-                        <img class="slide-image small-phone" src="./assets/images/phone-vertical-small-2.svg" alt="iPhone">
-                        <img class="slide-image big-phone" src="./assets/images/phone-vertical-2.svg" alt="iPhone">
-                        <img class="slide-image small-phone" src="./assets/images/phone-vertical-small-2.svg" alt="iPhone">
                     </div>
                 </div>
                 <img class="slider-arrow left" src="./assets/images/chev-left.png" alt="arrow">
@@ -249,7 +249,7 @@
                         <input required type="email" placeholder="Email (Required)" maxlength="60">
                         <input name="subject" type="text" placeholder="Subject" maxlength="60">
                         <textarea name="description" placeholder="Describe your project in detail..." maxlength="1000"></textarea>
-                        <button type="submit" class="submit-button">Submit</button>
+                        <button type="submit" class="submit-button">Send</button>
                     </form>
                     <div class="quote-item contacts">
                         <h3>
@@ -270,7 +270,7 @@
     </main>
     <footer>
         <div class="container">
-            <div class="footer-item">© Copyright 2013</div>
+            <div class="footer-item copyright">© Copyright 2013</div>
             <div class="footer-item media">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 90"><title>Ресурс 1</title><g id="Слой_2" data-name="Слой 2"><g id="All_glyphs" data-name="All glyphs"><path d="M50,15.65H35.72c-1.69,0-3.58,2.22-3.58,5.19V31.15H50v14.7H32.14V90H15.29V45.85H0V31.15H15.29V22.5C15.29,10.09,23.9,0,35.72,0H50Z"/></g></g></svg>
