@@ -975,8 +975,8 @@ footer .media a svg path {
     }
 
     section.services .services-items-container .services-item {
-        margin-top: 4%;
-        margin-bottom: 4%;
+        margin-top: 27px;
+        margin-bottom: 27px;
         margin-right: 5%;
     }
 
@@ -1139,8 +1139,8 @@ footer .media a svg path {
     }
 
     section.services .services-items-container .services-item {
-        margin-top: 5%;
-        margin-bottom: 5%;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     section.services .container {
