@@ -290,7 +290,7 @@ section.slider .iphone-vertical-base {
 section.slider .iphone-horizontal-base {
     width: calc(1020px * 0.4490);
     background-image: url('./assets/images/iPhone\ Horizontal\ Base.png');
-    padding-bottom: calc(100% * 0.4716);
+    padding-bottom: calc(1020px * 0.4490 * 0.4716);
 }
 
 section.slider .slide-1 .iphone-vertical-screen {
@@ -941,10 +941,12 @@ footer .media a svg path {
     
     section.slider .iphone-vertical-base {
         width: calc(100vw * 0.2118);
+        padding-bottom: calc(100vw * 0.2117 * 2.1204)
     }
 
     section.slider .iphone-horizontal-base {
         width: calc(100vw * 0.4490);
+        padding-bottom: calc(100vw * 0.4490 * 0.4716)
     }
 
     section.slider .slide-1 .iphone-vertical-screen {
