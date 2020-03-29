@@ -493,18 +493,16 @@ section.portfolio .portfolio-images-container {
 section.portfolio .portfolio-image {
     background-position: center;
     background-repeat: no-repeat;
-    margin: 8px;
+    margin: 10px;
     cursor: pointer;
-    border: 0px solid #F06C64;
     transition: all .2s;
     flex: 1 0 20%;
     padding-bottom: 18.8%;
-    border: 5px solid rgba(0, 0, 0, 0);
     background-size: cover;
 }
 
 section.portfolio .portfolio-image.active {
-    border: 5px solid #F06C64;
+    box-shadow: inset 0 0 0 5px #F06C64;
 }
 
 section.portfolio .portfolio-image.pi-1 {
@@ -984,7 +982,7 @@ footer .media a svg path {
 
     section.portfolio .portfolio-image {
         flex: 1 0 25%;
-        padding-bottom: 25%;
+        padding-bottom: 24.5%;
     }
 
     section.about-us .about-us-items-container {
@@ -1061,7 +1059,7 @@ footer .media a svg path {
     
     header .logo {
         font-size: 20px;
-        margin: 0 calc((100% - 106px)/2);;
+        margin: 0 calc((100% - 83px)/2);;
         transition: all .5s;
     }
 
@@ -1155,13 +1153,13 @@ footer .media a svg path {
 
     section.portfolio .container {
         padding-top: 42px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
     }
 
     section.portfolio .portfolio-image {
         flex: 1 0 40%;
-        padding-bottom: 37.5%;
-        margin: 3px;
+        padding-bottom: 38.5%;
+        margin: 7px;
     }
 
     section.portfolio .portfolio-images-container .portfolio-image:nth-of-type(n+9) {

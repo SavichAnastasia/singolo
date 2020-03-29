@@ -98,9 +98,9 @@ portfolioMenu.addEventListener('click', (e) => {
     portfolioImagesContainer.innerHTML = '';
     for (let i = 0; i < newPortfolioImages.length; i++) {
         if (i === portfolioImages.length - 1) {
-            portfolioImagesContainer.append([...newPortfolioImages][0])
+            portfolioImagesContainer.append(newPortfolioImages[0])
         } else {
-            portfolioImagesContainer.append([...newPortfolioImages][i + 1])
+            portfolioImagesContainer.append(newPortfolioImages[i + 1])
         }
     }
 })
@@ -153,12 +153,22 @@ document.querySelector('.modal button').addEventListener('click', (e) => {
 
 //header 375px
 const header = document.querySelector('header');
-const cover = document.querySelector('header .modal-cover')
+const cover = document.querySelector('header .modal-cover');
+const navEl = document.querySelectorAll('nav a');
+
 
 document.querySelector('.burger-btn').addEventListener('click', (e) => {
     header.classList.toggle('burger');
 })
 
 cover.addEventListener('click', (e) => {
-    header.classList.remove('burger');
+    hideBurger()
 })
+
+navEl.forEach(el => {
+    el.addEventListener('click', hideBurger)
+})
+
+function hideBurger () {
+    header.classList.remove('burger');
+}
